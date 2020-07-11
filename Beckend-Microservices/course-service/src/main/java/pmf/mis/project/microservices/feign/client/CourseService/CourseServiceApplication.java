@@ -1,4 +1,4 @@
-package pmf.it.mis.project.app;
+package pmf.mis.project.microservices.feign.client.CourseService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,11 +8,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-public class AppApplication {
+public class CourseServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AppApplication.class, args);
-
+		SpringApplication.run(CourseServiceApplication.class, args);
 	}
 
 }
