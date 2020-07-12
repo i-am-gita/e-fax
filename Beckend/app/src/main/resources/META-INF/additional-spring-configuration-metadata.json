@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "pmf.it.mis.project.app.jwtExpirationMs",
+      "type": "java.lang.String",
+      "description": "Description for pmf.it.mis.project.app.jwtExpirationMs."
+    },
+    {
+      "name": "pmf.it.mis.project.app.jwtSecret",
+      "type": "java.lang.String",
+      "description": "Description for pmf.it.mis.project.app.jwtSecret."
+    }
+  ] }

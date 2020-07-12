@@ -1,4 +1,4 @@
-package pmf.it.mis.project.app.model;
+package pmf.mis.project.microservices.feign.client.CourseService.model;
 
 import javax.persistence.*;
 import java.util.HashSet;

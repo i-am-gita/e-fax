@@ -1,4 +1,4 @@
-package pmf.it.mis.project.app.model;
+package pmf.mis.project.microservices.feign.client.CourseService.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -21,8 +21,8 @@ public class CourseEntity {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "enrolled_students",
-                    joinColumns = @JoinColumn(name = "course_entity_id"),
-                    inverseJoinColumns = @JoinColumn(name = "user_entity_id"))
+            joinColumns = @JoinColumn(name = "course_entity_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_entity_id"))
     private Set<UserEntity> enrolledStudents = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -40,8 +40,8 @@ public class CourseEntity {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "registrations_courses",
-                joinColumns = @JoinColumn(name = "course_entity_id"),
-                inverseJoinColumns = @JoinColumn(name = "exam_registration_entity_id"))
+            joinColumns = @JoinColumn(name = "course_entity_id"),
+            inverseJoinColumns = @JoinColumn(name = "exam_registration_entity_id"))
     private Set<ExamRegistrationEntity> examRegistrations;
 
 
