@@ -1,0 +1,11 @@
+<div class="bg-light border-right" id="sidebar-wrapper" *ngIf="isLoggedIn && showStudentBoard">
+  <img class="sluzba" src="/assets/img/sluzba.png">
+  <div class="list-group list-group-flush">
+    <a href="#" class="list-group-item list-group-item-action bg-light">Upis godine</a>
+    <a href="#" class="list-group-item list-group-item-action bg-light">Finansije</a>
+    <a href="#" class="list-group-item list-group-item-action bg-light">Overa semestra</a>
+    <button class="list-group-item list-group-item-action bg-light" (click)="isExamPeriod()">Prijava ispita</button>
+    <a href="#" class="list-group-item list-group-item-action bg-light">Podnesi molbu</a>
+    <a href="#" class="list-group-item list-group-item-action bg-light">Podnesi zahtev</a>
+  </div>
+</div>

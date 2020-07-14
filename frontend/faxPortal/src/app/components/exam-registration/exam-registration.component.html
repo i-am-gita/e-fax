@@ -1,0 +1,36 @@
+<div class="card">
+  <h3 class="card-header">Prijavljivanje ispita</h3>
+  <div class="card-body">
+
+    <form (ngSubmit)="processExamRegistrationForm(f)" #f="ngForm">
+      <div class="form-row">
+          <span class="badge badge-warning badge-pill" id="exam-period">{{examPeriodName}} ispitni rok</span>
+      </div>
+      <hr>
+
+      <div class="course" *ngFor="let crs of listeningCourses">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <div class="alert-heading course-name">{{crs.title}}</div>
+          </div>
+          <div class="form-group col-md-4">
+            <select id="course-professor" class="form-control">
+              <option selected>{{crs.professor.firstname + ' ' + crs.professor.lastname}}</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label class="switch">
+              <input type="checkbox">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <button type="submit" class="btn btn-primary" id="exam-register">Prijavi ispite</button>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+}
+.card {
+  min-height: 300px;
+  margin: 30px;
+  width: 300px;
+}
+
+.title {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.course-content {
+  display: flex;
+  flex-direction: column;
+}
+.course-content > p {
+  margin: 0 20px;
+}
+
+
+.bg-primary {
+  text-align: center;
+  color: white;
+  padding-top: 5px;
+}

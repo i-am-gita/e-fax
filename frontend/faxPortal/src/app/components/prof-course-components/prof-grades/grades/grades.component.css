@@ -1,0 +1,47 @@
+
+.card {
+  min-height: 150px;
+  margin: 15px;
+}
+
+.card-body{
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+}
+
+.badge{
+  float: right;
+  font-size: 14px;
+}
+
+.grade{
+  float: left;
+  font-size: 50px;
+}
+.annul{
+  float: right;
+  margin-top: 15px;
+}
+
+.add-grade{
+  float: right;
+}
+.close-grade{
+  float: right;
+  margin-left: 10px;
+}
+
+.grades{
+  visibility: hidden;
+  position: absolute;
+  right: 25%;
+  width: 50%;
+  height: 100%;
+}
+
+.alert{
+  visibility: hidden;
+}
+
+

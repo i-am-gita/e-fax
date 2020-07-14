@@ -1,0 +1,26 @@
+
+.card {
+  min-height: 150px;
+  margin: 15px;
+}
+
+.card-body{
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+}
+
+.badge{
+  float: right;
+  font-size: 14px;
+}
+
+.grades-button{
+  margin-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+}
+

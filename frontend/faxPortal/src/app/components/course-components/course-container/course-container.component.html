@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <div>{{course}}</div>
+    <app-course-list
+      [courses] = "courses"
+      (enrolledCourse) = "enroll($event)">
+    </app-course-list>
+</div>

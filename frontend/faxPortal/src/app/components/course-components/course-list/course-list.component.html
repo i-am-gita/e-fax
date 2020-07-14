@@ -1,0 +1,18 @@
+<div class = "grid">
+
+    <div class = "card" *ngFor="let course of courses | async">
+      <div class="course-item">
+        <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
+          <div class="course-content">
+            <div class="title ">
+              <h4>{{course.title}}</h4>
+              <small>ESPB: {{ ' ' + course.espb}}</small><hr>
+            </div>
+            <p>Profesor: {{course.professor}}</p>
+            <p> {{course.desc}} </p>
+            <button class="btn btn-primary" (click) = "enrollInCourse(course)">Upiši kurs</button>
+        </div>
+      </div>
+    </div>
+
+</div>

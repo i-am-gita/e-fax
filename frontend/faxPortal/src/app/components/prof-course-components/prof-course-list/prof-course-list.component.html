@@ -1,0 +1,23 @@
+<div class = "grid">
+
+<div class="card" *ngFor="let course of courses">
+  <h5 class="card-header">{{course.title}}</h5>
+  <div class="card-body">
+    <p class="card-text">
+      Profesor:
+      <span class="badge badge-primary badge-pill">{{course.professor.firstname + ' ' + course.professor.lastname}}</span>
+      <br>
+      Asistent:
+      <span class="badge badge-primary badge-pill" *ngFor="let assistant of course.assistants ">{{assistant.firstname + ' ' + assistant.lastname}}
+        <br>
+      </span>
+
+      Broj upisanih studenata:
+      <span class="badge badge-primary badge-pill">{{course.enrolledStudents.length}}</span>
+    </p>
+    <span class="btn btn-primary grades-button" (click)=openGrades(course)>Ocene</span>
+    <span class="btn btn-danger">Odjava sa predmeta</span>
+  </div>
+</div>
+
+</div>

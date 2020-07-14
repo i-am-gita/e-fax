@@ -1,0 +1,10 @@
+<app-grades>
+
+</app-grades>
+
+<div class = "wrapper">
+    <app-prof-course-list
+      [courses] = "courses"
+      (gradesForCourse) = "getGrades($event)">
+    </app-prof-course-list>
+</div>

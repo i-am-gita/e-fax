@@ -1,0 +1,54 @@
+.wrapper {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+
+}
+.side {
+  flex: 1;
+}
+.profile-img {
+  background-image: url("/assets/img/profil-1.png");
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.first-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid gray;
+
+}
+
+.overen{
+  color: green;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .first-side {
+    border-right: 1px solid transparent;
+  }
+}
+
+.list-group-flush{
+  text-align: center;
+}
+
+.bg-primary {
+  width: 90%;
+  text-align: center;
+  color: white;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.card{
+  margin: 10px;
+}

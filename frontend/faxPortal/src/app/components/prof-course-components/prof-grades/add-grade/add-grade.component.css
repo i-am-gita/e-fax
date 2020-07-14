@@ -1,0 +1,25 @@
+
+.card {
+  min-height: 150px;
+  margin: 15px;
+}
+
+.card-body{
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+}
+
+.cancel-grade{
+  float: right;
+}
+
+.add-grade-card{
+  visibility: hidden;
+  position: absolute;
+  top: 15%;
+  right: 30%;
+  width: 40%;
+  height: fit-content;
+}
+

@@ -1,0 +1,36 @@
+<div class = "grades">
+  <div class="card">
+    <h5 class="card-header">
+      Ocene iz kursa
+      <span class="btn btn-danger close-grade" (click) = closeGrades()>X</span>
+      <span class="btn btn-primary add-grade" (click) = addGrade()>Dodaj ocenu</span>
+    </h5>
+    <div class="card-body">
+      <div class="alert alert-success" role="alert">
+        Uspešno ste dodali novu ocenu!
+      </div>
+
+      <div class="card" *ngFor="let grade of grades">
+        <h5 class="card-header">Broj indeksa: {{grade.student.username}}</h5>
+        <div class="card-body">
+          <p class="card-text">
+            Student:
+            <span class="badge badge-primary badge-pill">{{grade.student.firstname + ' ' + grade.student.lastname}}</span>
+            <br>
+            Broj bodova:
+            <span class="badge badge-primary badge-pill">{{grade.points + '/100'}}</span>
+            <br>
+            <span class="grade border-success">{{grade.finalMark}}</span>
+            <a href="#" class="annul btn btn-danger">Poništi ocenu</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Dodavanje ocene -->
+      <app-add-grade>
+
+      </app-add-grade>
+
+    </div>
+  </div>
+</div>
