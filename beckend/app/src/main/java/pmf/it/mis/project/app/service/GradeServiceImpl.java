@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import pmf.it.mis.project.app.dto.GradeDto;
 import pmf.it.mis.project.app.dto.GradeUpdatePatch;
 import pmf.it.mis.project.app.mapper.GradeMapper;
+import pmf.it.mis.project.app.model.CourseEntity;
 import pmf.it.mis.project.app.model.GradeEntity;
+import pmf.it.mis.project.app.model.UserEntity;
 import pmf.it.mis.project.app.repository.GradeRepository;
 
 import javax.transaction.Transactional;
@@ -53,4 +55,10 @@ public class GradeServiceImpl implements GradeService {
     public void deleteById(Integer idGrade) {
         gradeRepo.deleteById(idGrade);
     }
+
+    @Override
+    public Set<GradeDto> findGradeByStudentId(String idStudent) {
+        return gradeMapper.toGradeDTOs(gradeRepo.findByStudentId(idStudent));
+    }
+
 }

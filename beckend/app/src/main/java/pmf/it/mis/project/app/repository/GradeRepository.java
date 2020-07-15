@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pmf.it.mis.project.app.dto.GradeDto;
 import pmf.it.mis.project.app.dto.GradeUpdatePatch;
 import pmf.it.mis.project.app.model.GradeEntity;
+import pmf.it.mis.project.app.model.UserEntity;
 
 import java.util.Optional;
 import java.util.Set;
@@ -22,6 +23,9 @@ public interface GradeRepository extends JpaRepository<GradeEntity, Integer> {
     GradeDto save(@Param("grade") GradeDto grade);
 
     void deleteById(@Param("idGrade") Integer idGrade);
+
+    @Query(value = "SELECT * FROM grade_entity g WHERE g.user_entity_id = :idStudent", nativeQuery = true)
+    Set<GradeEntity> findByStudentId(@Param("idStudent") String idStudent);
 
     @Override
     Optional<GradeEntity> findById(Integer integer);

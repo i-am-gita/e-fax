@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import pmf.it.mis.project.app.dto.*;
 import pmf.it.mis.project.app.mapper.CourseMapper;
 import pmf.it.mis.project.app.model.CourseEntity;
+import pmf.it.mis.project.app.model.UserEntity;
 import pmf.it.mis.project.app.repository.CourseRepository;
+import pmf.it.mis.project.app.repository.UserRepository;
 
 import javax.transaction.Transactional;
 import java.util.*;
@@ -21,6 +23,9 @@ public class CourseServiceImpl implements CourseService{
 
     @Autowired
     private CourseMapper courseMapper;
+
+    @Autowired
+    private UserRepository userRepo;
 
     @Override
     public Set<CourseStudentDto> getEnrollableCoursesForStudentId(final String id) {
@@ -64,5 +69,28 @@ public class CourseServiceImpl implements CourseService{
     @Override
     public CourseStudentDto findByTitle(String title) {
         return courseMapper.toCourseStudentDTO(courseRep.findByTitle(title));
+    }
+
+    @Override
+    public Set<CoursesReviewsDto> findCoursesForStudentReview(String idStudent) {
+        UserEntity student = userRepo.findById(idStudent).get();
+        Set<CourseEntity> courses = courseRep.findListeningCoursesForStudent(idStudent);
+        Set<CoursesReviewsDto> coursesDtos = new HashSet<>();
+        for(CourseEntity course : courses){
+            CoursesReviewsDto reviewDto = new CoursesReviewsDto.Builder()
+                    .withTitle(course.getTitle())
+                    .withProfessorName(course.getProfessor().getFirstname() +" " + course.getProfessor().getLastname())
+                    .withStudentName(student.getFirstname() + " " + student.getLastname())
+                    .build();
+            Set<String> assistantNames = new HashSet<>();
+            for(UserEntity assistant : course.getCourseAssistants()){
+                assistantNames.add(assistant.getFirstname() + " " + assistant.getLastname());
+            }
+            reviewDto.setAssistantNames(assistantNames);
+
+            coursesDtos.add(reviewDto);
+        }
+
+        return coursesDtos;
     }
 }

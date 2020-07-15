@@ -22,7 +22,7 @@ public class ExamPeriodEntity {
 
     private Date examPeriodEnd;
 
-    @OneToMany(mappedBy = "examPeriod")
+    @OneToMany(mappedBy = "examPeriod", orphanRemoval = true, cascade = CascadeType.PERSIST)
     private Set<ExamRegistrationEntity> examRegistrations = new HashSet<>();
 
     public ExamPeriodEntity(){}

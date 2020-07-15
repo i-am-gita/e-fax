@@ -4,6 +4,7 @@ package pmf.it.mis.project.app.service;
 import org.springframework.web.bind.annotation.RequestParam;
 import pmf.it.mis.project.app.dto.CourseProfessorDto;
 import pmf.it.mis.project.app.dto.CourseStudentDto;
+import pmf.it.mis.project.app.dto.CoursesReviewsDto;
 import pmf.it.mis.project.app.dto.PopularCoursesExtendedDto;
 
 import java.util.List;
@@ -23,6 +24,8 @@ public interface CourseService {
     List<PopularCoursesExtendedDto> findPopularCoursesByNumberOfEnrolledStudents();
 
     CourseStudentDto findByTitle(String title);
+
+    Set<CoursesReviewsDto> findCoursesForStudentReview(@RequestParam("idStudent") String idStudent);
 
 
 

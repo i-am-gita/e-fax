@@ -21,7 +21,7 @@ public class GradeEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_entity_id")
-    private CourseEntity student;
+    private UserEntity student;
 
     public GradeEntity(){}
 
@@ -29,6 +29,22 @@ public class GradeEntity {
         points = builder.points;
         finalMark = builder.finalMark;
         professorsComment = builder.professorsComment;
+    }
+
+    public CourseEntity getCourse() {
+        return course;
+    }
+
+    public void setCourse(CourseEntity course) {
+        this.course = course;
+    }
+
+    public UserEntity getStudent() {
+        return student;
+    }
+
+    public void setStudent(UserEntity student) {
+        this.student = student;
     }
 
     public Integer getId() {

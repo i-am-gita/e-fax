@@ -8,6 +8,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pmf.it.mis.project.app.dto.CourseProfessorDto;
 import pmf.it.mis.project.app.dto.CourseStudentDto;
+import pmf.it.mis.project.app.dto.CoursesReviewsDto;
 import pmf.it.mis.project.app.dto.PopularCoursesExtendedDto;
 import pmf.it.mis.project.app.service.CourseService;
 
@@ -42,7 +43,7 @@ public class CourseController {
 
     @GetMapping(path = "/profesor/kursevi/{id}", produces = APPLICATION_JSON_VALUE)
     @PreAuthorize("hasRole('ROLE_PROFESSOR') or hasRole('ROLE_ASSISTANT') or hasRole('ROLE_ADMIN')")
-    public ResponseEntity<Set<CourseProfessorDto>> getProfessorCourses(@PathVariable final String id){
+    public ResponseEntity<Set<CourseProfessorDto>> getProfessorCourses(@PathVariable(name = "id") final String id){
        final Set<CourseProfessorDto> professorsCoursesDtos = courseService.findProfessorsCourses(id);
 
        return new ResponseEntity<>(professorsCoursesDtos, HttpStatus.OK);
@@ -58,6 +59,11 @@ public class CourseController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<CourseStudentDto> getMostPopularCoursesByEnrolledStudents(@PathVariable("nazivKursa") String courseName){
         return new ResponseEntity<>(courseService.findByTitle(courseName), HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/anketa")
+    public Set<CoursesReviewsDto> getCoursesForReview(@RequestParam final String idStudent){
+       return courseService.findCoursesForStudentReview(idStudent);
     }
 
 

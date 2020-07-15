@@ -25,7 +25,7 @@ public class FinanceController {
 
     @GetMapping(path = "/student/racun/{id}",produces = APPLICATION_JSON_VALUE)
     @PreAuthorize("hasRole('ROLE_STUDENT')")
-    public FinanceDto getAcountForStudent(@PathVariable final String id){
+    public FinanceDto getAcountForStudent(@PathVariable(name = "id") final String id){
         FinanceDto response = financeService.getStudentFinanceAccount(id);
         return response;
     }

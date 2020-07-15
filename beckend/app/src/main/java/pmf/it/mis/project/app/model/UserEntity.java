@@ -44,13 +44,13 @@ public class UserEntity {
     @JsonIgnoreProperties("courseAssistants")
     private Set<CourseEntity> assitantCourses = new HashSet<>();
 
-    @OneToMany(mappedBy = "professor")
+    @OneToMany(mappedBy = "professor", orphanRemoval = true, cascade = CascadeType.PERSIST)
     private Set<CourseEntity> professorsCourses = new HashSet<>();
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", orphanRemoval = true, cascade = CascadeType.PERSIST)
     private Set<GradeEntity> studentGrades = new HashSet<>();
 
-    @OneToMany(mappedBy = "studentRegistration")
+    @OneToMany(mappedBy = "studentRegistration", orphanRemoval = true, cascade = CascadeType.PERSIST)
     private Set<ExamRegistrationEntity> studentExamRegistrations;
 
 
