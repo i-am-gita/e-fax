@@ -1,8 +1,6 @@
 package pmf.it.mis.project.app.mapper;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
 import pmf.it.mis.project.app.dto.CourseProfessorDto;
 import pmf.it.mis.project.app.dto.CourseStudentDto;
 import pmf.it.mis.project.app.model.CourseEntity;
@@ -26,4 +24,6 @@ public interface CourseMapper {
     Set<CourseProfessorDto> toCourseProfessorDTOs(Set<CourseEntity> course);
 
     CourseEntity toCourseFromProfessorCourseDto(CourseProfessorDto courseProfessorDto);
+
+
 }

@@ -57,14 +57,6 @@ public class CourseProfessorDto {
         this.espb = espb;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public Set<UserEntity> getEnrolledStudents() {
         return enrolledStudents;
     }
@@ -87,5 +79,9 @@ public class CourseProfessorDto {
 
     public void setExamRegistrations(Set<ExamRegistrationEntity> examRegistrations) {
         this.examRegistrations = examRegistrations;
+    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

@@ -3,11 +3,14 @@ package pmf.it.mis.project.app.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestParam;
 import pmf.it.mis.project.app.dto.GradeDto;
+import pmf.it.mis.project.app.dto.GradeUpdatePatch;
 import pmf.it.mis.project.app.model.GradeEntity;
 
+import java.util.Optional;
 import java.util.Set;
 
 @Repository
@@ -19,4 +22,7 @@ public interface GradeRepository extends JpaRepository<GradeEntity, Integer> {
     GradeDto save(@Param("grade") GradeDto grade);
 
     void deleteById(@Param("idGrade") Integer idGrade);
+
+    @Override
+    Optional<GradeEntity> findById(Integer integer);
 }

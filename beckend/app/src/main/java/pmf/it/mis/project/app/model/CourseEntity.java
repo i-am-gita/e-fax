@@ -63,6 +63,10 @@ public class CourseEntity {
         examRegistrations = builder.examRegistrations;
     }
 
+    public Integer getEnrolledStudentsSize(){
+        return enrolledStudents.size();
+    }
+
     public Integer getId() {
         return id;
     }
@@ -91,11 +95,11 @@ public class CourseEntity {
         this.espb = espb;
     }
 
-    public String getDesc() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDesc(String desc) {
+    public void setDescription(String desc) {
         this.description = desc;
     }
 

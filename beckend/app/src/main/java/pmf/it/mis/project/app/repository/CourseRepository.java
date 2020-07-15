@@ -6,6 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import pmf.it.mis.project.app.model.CourseEntity;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -23,4 +24,8 @@ public interface CourseRepository extends JpaRepository<CourseEntity, Integer> {
 
     @Query(value = "SELECT DISTINCT * FROM course_entity e WHERE e.user_entity_id = :idProfessor", nativeQuery = true)
     Set<CourseEntity> findProfessorsCourses(@Param("idProfessor") String idProfessor);
+
+     List<CourseEntity> findAll();
+
+     CourseEntity findByTitle(String title);
 }
