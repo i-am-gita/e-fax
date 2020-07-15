@@ -1,11 +1,9 @@
 package pmf.it.mis.project.financial.service.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import pmf.it.mis.project.financial.service.dto.FinanceDto;
 import pmf.it.mis.project.financial.service.dto.WithdrawalDto;
-import pmf.it.mis.project.financial.service.model.FinanceEntity;
 import pmf.it.mis.project.financial.service.service.FinanceService;
 import pmf.it.mis.project.financial.service.service.WithdrawalService;
 

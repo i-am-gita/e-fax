@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import pmf.it.mis.project.survey.service.dto.CourseDto;
 import pmf.it.mis.project.survey.service.dto.SurveyDto;
 import pmf.it.mis.project.survey.service.service.CourseService;
-import pmf.it.mis.project.survey.service.service.ReviewService;
 import pmf.it.mis.project.survey.service.service.SurveyService;
 
 import java.util.Set;

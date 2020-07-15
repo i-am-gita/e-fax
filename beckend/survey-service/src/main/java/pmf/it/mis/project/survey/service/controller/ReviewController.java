@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pmf.it.mis.project.survey.service.dto.ReviewDto;
 import pmf.it.mis.project.survey.service.dto.ReviewRatingPatch;
-import pmf.it.mis.project.survey.service.dto.SurveyDto;
 import pmf.it.mis.project.survey.service.service.ReviewService;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
