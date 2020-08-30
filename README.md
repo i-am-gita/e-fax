@@ -1,8 +1,8 @@
 # e-fax
-<h3>
-e-fax je delimično implementirana aplikacija za online obavljanje fakultetskih aktivnosti.
-</h3>
 <h2>
+e-fax je delimično implementirana aplikacija za online obavljanje fakultetskih aktivnosti.
+</h2>
+<h3>
 Za izradu projekta korišćene su sledeće tehnologije:
 • Angular 9 + Bootstrap - Frontend
 • Spring Boot 2.2.3 + MySQL - Backend
@@ -14,6 +14,6 @@ Lista dodataka u Spring Boot-u i njihova uloga:
 • Lombok - Anotacije za smanjivanje bolier plate koda
 • Cloud (Feign, Eureka, Aktuator) - Za implementaciju mikroservisne arhitekture
 • Mapstruct - Za mapiranje podataka koji se šalju korisniku
-</h2>
+</h3>
 
 
