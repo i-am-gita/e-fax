@@ -1,13 +1,19 @@
 # e-fax
-<h3>Komunikacija između servisa "survey-service" i "fax-service" se ne uspostavlja zato što Spring ne prepoznaje kontrolere uopšte(error404). 
-Glavni razlog ovoga je to što sam slučajno napravio ReviewMapper klasu u glavnom paketu pa sam morao da ga posebno skreniram @ComponentScan-om. Premeštanjem ReviewMapper klase dolazi do konflikta bean-ova zbog
-ReviewMapperImp klase koja se ne briše brisanjem ReviewMapper-a. 
-
-Ovo se prevazilazi ubacivanjem sledećeg koga u zaglavlje SurveyServiceApplication
-
-@ComponentScan(basePackages = {"pmf.it.mis.project.survey.service"},excludeFilters={
-		@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE, value= ReviewMapper.class)})
-@EnableJpaRepositories("pmf.it.mis.project.survey.service.repository")
+<h3>
+e-fax je delimično implementirana aplikacija za online obavljanje fakultetskih aktivnosti.
 </h3>
+<h2>
+Za izradu projekta korišćene su sledeće tehnologije:
+• Angular 9 + Bootstrap - Frontend
+• Spring Boot 2.2.3 + MySQL - Backend
+Lista dodataka u Spring Boot-u i njihova uloga:
+• JPA - Rad sa podacima
+• Security + JWT - Zaštita ruta i dodeljivanje uloge korisnicima
+• Web - Komunikacija između frontenda i backenda
+• Devtools - Optimizovan programski kod i način izvršavanja
+• Lombok - Anotacije za smanjivanje bolier plate koda
+• Cloud (Feign, Eureka, Aktuator) - Za implementaciju mikroservisne arhitekture
+• Mapstruct - Za mapiranje podataka koji se šalju korisniku
+</h2>
 
 
